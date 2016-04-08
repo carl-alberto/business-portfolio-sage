@@ -1126,3 +1126,70 @@ function businessportfolio_secondary_text_color_css() {
 	wp_add_inline_style( 'businessportfolio-style', sprintf( $css, $secondary_text_color ) );
 }
 add_action( 'wp_enqueue_scripts', 'businessportfolio_secondary_text_color_css', 11 );
+
+
+if ( ! function_exists('homeslider_post_type') ) {
+
+
+
+
+
+
+
+
+
+// Register Custom Post Type
+function homeslider_post_type() {
+
+	$labels = array(
+		'name'                  => _x( 'Home Sliders', 'Post Type General Name', 'businessportfolio' ),
+		'singular_name'         => _x( 'Home Slider', 'Post Type Singular Name', 'businessportfolio' ),
+		'menu_name'             => __( 'Home Slider', 'businessportfolio' ),
+		'name_admin_bar'        => __( 'Home Slider', 'businessportfolio' ),
+		'archives'              => __( 'Home Slider Archives', 'businessportfolio' ),
+		'parent_item_colon'     => __( 'Parent Item:', 'businessportfolio' ),
+		'all_items'             => __( 'All Items', 'businessportfolio' ),
+		'add_new_item'          => __( 'Add New Item', 'businessportfolio' ),
+		'add_new'               => __( 'Add New', 'businessportfolio' ),
+		'new_item'              => __( 'New Item', 'businessportfolio' ),
+		'edit_item'             => __( 'Edit Item', 'businessportfolio' ),
+		'update_item'           => __( 'Update Item', 'businessportfolio' ),
+		'view_item'             => __( 'View Item', 'businessportfolio' ),
+		'search_items'          => __( 'Search Item', 'businessportfolio' ),
+		'not_found'             => __( 'Not found', 'businessportfolio' ),
+		'not_found_in_trash'    => __( 'Not found in Trash', 'businessportfolio' ),
+		'featured_image'        => __( 'Featured Image', 'businessportfolio' ),
+		'set_featured_image'    => __( 'Set featured image', 'businessportfolio' ),
+		'remove_featured_image' => __( 'Remove featured image', 'businessportfolio' ),
+		'use_featured_image'    => __( 'Use as featured image', 'businessportfolio' ),
+		'insert_into_item'      => __( 'Insert into item', 'businessportfolio' ),
+		'uploaded_to_this_item' => __( 'Uploaded to this item', 'businessportfolio' ),
+		'items_list'            => __( 'Items list', 'businessportfolio' ),
+		'items_list_navigation' => __( 'Items list navigation', 'businessportfolio' ),
+		'filter_items_list'     => __( 'Filter items list', 'businessportfolio' ),
+	);
+	$args = array(
+		'label'                 => __( 'Home Slider', 'businessportfolio' ),
+		'description'           => __( 'Home Page Slider Images', 'businessportfolio' ),
+		'labels'                => $labels,
+		'supports'              => array( 'title', 'editor', 'thumbnail', ),
+		'taxonomies'            => array( '' ),
+		'hierarchical'          => false,
+		'public'                => true,
+		'show_ui'               => true,
+		'show_in_menu'          => true,
+		'menu_position'         => 5,
+		'show_in_admin_bar'     => true,
+		'show_in_nav_menus'     => true,
+		'can_export'            => true,
+		'has_archive'           => true,
+		'exclude_from_search'   => false,
+		'publicly_queryable'    => true,
+		'capability_type'       => 'page',
+	);
+	register_post_type( 'homeslider', $args );
+
+}
+add_action( 'init', 'homeslider_post_type', 0 );
+
+}
