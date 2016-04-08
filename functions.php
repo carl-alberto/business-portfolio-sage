@@ -18,6 +18,7 @@ $sage_includes = [
   'lib/assets.php',                // Scripts and stylesheets
   'lib/titles.php',                // Page titles
   'lib/extras.php',                // Custom functions
+  'lib/include-kirki.php',         // Include Kirki
   'lib/customizer.php'             // Theme customizer
 ];
 
