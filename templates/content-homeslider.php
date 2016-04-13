@@ -17,7 +17,7 @@
              $class = '';
            };
           ?>
-         <div class="item <?php echo $class ?>">
+         <div class="item<?php echo $class ?>">
           <?php
             $feat_image = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
             echo '<img src="' . $feat_image . '" alt="" width="" height="">' ;
