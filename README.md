@@ -1,4 +1,4 @@
-Forked From Sage
+This theme is Forked From Sage
 
 
 
