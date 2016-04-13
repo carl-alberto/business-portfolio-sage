@@ -1,24 +1,41 @@
 <?php
   $args = array( 'post_type' => 'homeslider' );
   $loop = new WP_Query( $args );
+  $c = 0;
+  $class = '';
  ?>
-
-<?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
-  <article <?php post_class(); ?>>
-    <header>
-      <h1 class="entry-title"><?php the_title(); ?></h1>
-      <?php get_template_part('templates/entry-meta'); ?>
-    </header>
-    <div class="entry-content">
-      <?php
-        the_content();
-        $feat_image = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
-        echo '<img src="' . $feat_image . '">' ;
-      ?>
+<div class="container">
+   <br>
+   <div id="myCarousel" class="carousel slide" data-ride="carousel">
+     <div class="carousel-inner" role="listbox">
+       <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
+         <?php
+           $c++;
+           if ( $c == 1 ) {
+             $class = ' active';
+           } else {
+             $class = '';
+           };
+          ?>
+         <div class="item <?php echo $class ?>">
+          <?php
+            $feat_image = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
+            echo '<img src="' . $feat_image . '" alt="" width="" height="">' ;
+            //echo '<div class="carousel-caption">';
+            //echo '<h3></h3>';
+            //echo '<p></p>';
+            //echo '</div>';
+          ?>
+        </div>
+      <?php endwhile; ?>
     </div>
-    <footer>
-      <?php wp_link_pages(['before' => '<nav class="page-nav"><p>' . __('Pages:', 'sage'), 'after' => '</p></nav>']); ?>
-    </footer>
-    <?php comments_template('/templates/comments.php'); ?>
-  </article>
-<?php endwhile; ?>
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</div>
