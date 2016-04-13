@@ -19,8 +19,9 @@
           ?>
          <div class="item<?php echo $class ?>">
           <?php
+            $feat_image_size = wp_get_attachment_image_src(get_post_thumbnail_id( $post->ID ));
             $feat_image = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
-            echo '<img src="' . $feat_image . '" alt="" width="" height="">' ;
+            echo '<img src="' . $feat_image . '" alt="" width="' . $feat_image_size[1] . '" height="' . $feat_image_size[2] . '">' ;
             //echo '<div class="carousel-caption">';
             //echo '<h3></h3>';
             //echo '<p></p>';

@@ -1210,3 +1210,11 @@ function businessportfolio_login_logo() { ?>
 		<?php } ?>
 <?php }
 add_action( 'login_enqueue_scripts', 'businessportfolio_login_logo' );
+
+add_filter('show_admin_bar', '__return_false');
+
+function businessportfolio_remove_wp_logo() {
+	global $wp_admin_bar;
+	$wp_admin_bar->remove_menu('wp-logo');
+}
+add_action( 'wp_before_admin_bar_render', 'businessportfolio_remove_wp_logo' );
