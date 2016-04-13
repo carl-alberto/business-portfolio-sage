@@ -3,3 +3,34 @@ body {
   color: $primary-text;
   text-align: $general-position;
 }
+
+.logo-container {
+  margin: 0 auto;
+  border-bottom: 1px solid #1f1f1f;
+  margin-bottom: 2em;
+}
+
+.logo-container img {
+  margin: 1em;
+}
+
+.nav-primary .nav > li > a {
+  color: $menu-textcolor;
+}
+
+.nav-primary .nav > li {
+  display: inline-block;
+  background: #0D0D0D;
+}
+
+.nav-primary .nav > li:hover {
+  background: $menu-hover-background;
+}
+
+.nav-primary .nav > li .sub-menu {
+  display: none;
+}
+
+.nav-primary .nav > li.current_page_item {
+  background: $menu-background;
+}
