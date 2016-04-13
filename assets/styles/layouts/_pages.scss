@@ -4,9 +4,17 @@ body {
   text-align: $general-position;
 }
 
+a, a:focus, a:hover {
+    color: $links;
+}
+
+p {
+  font-size: $body-font-size;
+}
+
 .logo-container {
   margin: 0 auto;
-  border-bottom: 1px solid #1f1f1f;
+  border-bottom: 1px solid $borders;
   margin-bottom: 2em;
 }
 
@@ -16,6 +24,7 @@ body {
 
 .nav-primary .nav > li > a {
   color: $menu-textcolor;
+  font-size: $main-menu-font-size;
 }
 
 .nav-primary .nav > li {
@@ -23,7 +32,7 @@ body {
   background: #0D0D0D;
 }
 
-.nav-primary .nav > li:hover {
+.nav-primary .nav > li > a:hover {
   background: $menu-hover-background;
 }
 
@@ -31,6 +40,44 @@ body {
   display: none;
 }
 
-.nav-primary .nav > li.current_page_item {
+.nav-primary .nav > li:hover .sub-menu {
+  display: block;
+  position: absolute;
+  float: left;
+  background: $menu-hover-background;
+  left: 20%;
+  z-index: 100;
+  list-style: none;
+  text-align: left;
+  padding-left: 0px;
+}
+
+.sub-menu a {
+  color: $primary-text;
+}
+
+.sub-menu a:hover {
+  text-decoration: none;
+}
+
+.sub-menu li:hover {
+  background: $menu-background;
+}
+
+.nav-primary .nav > li .sub-menu {
+  margin: 0px 0px;
+  padding: 4px;
+  min-width: 140px;
+}
+
+.nav-primary .nav > li .sub-menu a{
+  width: 100%;
+}
+
+.nav-primary .nav > li .sub-menu li{
+  padding: 4px 10px;
+}
+
+.nav-primary .nav > li.current_page_item, .nav-primary .nav > li.current-menu-ancestor {
   background: $menu-background;
 }

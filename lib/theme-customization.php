@@ -1194,3 +1194,19 @@ function homeslider_post_type() {
 add_action( 'init', 'homeslider_post_type', 0 );
 
 }
+
+
+function businessportfolio_login_logo() { ?>
+		<?php if ( get_header_image() ) { ?>
+			<style type="text/css">
+					.login h1 a {
+							background-image: url(<?php echo header_image(); ?>);
+							padding-bottom: 30px;
+							width: 100%;
+							height: auto;
+							background-size: 100%;
+					}
+			</style>
+		<?php } ?>
+<?php }
+add_action( 'login_enqueue_scripts', 'businessportfolio_login_logo' );
