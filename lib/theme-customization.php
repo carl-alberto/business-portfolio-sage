@@ -1,16 +1,16 @@
 <?php
 /**
- * Twenty Sixteen Customizer functionality
+ * Business Portfolio Customizer functionality
  *
  * @package WordPress
- * @subpackage Twenty_Sixteen
- * @since Twenty Sixteen 1.0
+ * @subpackage Business Portfolio
+ * @since Business Portfolio 0.1
  */
 
 /**
  * Sets up the WordPress core custom header and custom background features.
  *
- * @since Twenty Sixteen 1.0
+ * @since Business Portfolio 1.0
  *
  * @see businessportfolio_header_style()
  */
@@ -22,7 +22,7 @@ function businessportfolio_custom_header_and_background() {
 	/**
 	 * Filter the arguments used when adding 'custom-background' support in Twenty Sixteen.
 	 *
-	 * @since Twenty Sixteen 1.0
+	 * @since Business Portfolio 0.1
 	 *
 	 * @param array $args {
 	 *     An array of custom-background support arguments.
@@ -37,7 +37,7 @@ function businessportfolio_custom_header_and_background() {
 	/**
 	 * Filter the arguments used when adding 'custom-header' support in Twenty Sixteen.
 	 *
-	 * @since Twenty Sixteen 1.0
+	 * @since Business Portfolio 0.1
 	 *
 	 * @param array $args {
 	 *     An array of custom-header support arguments.
@@ -66,7 +66,7 @@ if ( ! function_exists( 'businessportfolio_header_style' ) ) :
  *
  * Create your own businessportfolio_header_style() function to override in a child theme.
  *
- * @since Twenty Sixteen 1.0
+ * @since Business Portfolio 0.1
  *
  * @see businessportfolio_custom_header_and_background().
  */
@@ -96,7 +96,7 @@ endif; // businessportfolio_header_style
 /**
  * Adds postMessage support for site title and description for the Customizer.
  *
- * @since Twenty Sixteen 1.0
+ * @since Business Portfolio 0.1
  *
  * @param WP_Customize_Manager $wp_customize The Customizer object.
  */
@@ -186,7 +186,7 @@ add_action( 'customize_register', 'businessportfolio_customize_register', 11 );
  * 4. Main Text Color.
  * 5. Secondary Text Color.
  *
- * @since Twenty Sixteen 1.0
+ * @since Business Portfolio 0.1
  *
  * @return array An associative array of color scheme options.
  */
@@ -196,7 +196,7 @@ function businessportfolio_get_color_schemes() {
 	 *
 	 * The default schemes include 'default', 'dark', 'gray', 'red', and 'yellow'.
 	 *
-	 * @since Twenty Sixteen 1.0
+	 * @since Business Portfolio 0.1
 	 *
 	 * @param array $schemes {
 	 *     Associative array of color schemes data.
@@ -271,7 +271,7 @@ if ( ! function_exists( 'businessportfolio_get_color_scheme' ) ) :
  *
  * Create your own businessportfolio_get_color_scheme() function to override in a child theme.
  *
- * @since Twenty Sixteen 1.0
+ * @since Business Portfolio 0.1
  *
  * @return array An associative array of either the current or default color scheme HEX values.
  */
@@ -294,7 +294,7 @@ if ( ! function_exists( 'businessportfolio_get_color_scheme_choices' ) ) :
  * Create your own businessportfolio_get_color_scheme_choices() function to override
  * in a child theme.
  *
- * @since Twenty Sixteen 1.0
+ * @since Business Portfolio 0.1
  *
  * @return array Array of color schemes.
  */
@@ -318,7 +318,7 @@ if ( ! function_exists( 'businessportfolio_sanitize_color_scheme' ) ) :
  * Create your own businessportfolio_sanitize_color_scheme() function to override
  * in a child theme.
  *
- * @since Twenty Sixteen 1.0
+ * @since Business Portfolio 0.1
  *
  * @param string $value Color scheme name value.
  * @return string Color scheme name.
@@ -337,7 +337,7 @@ endif; // businessportfolio_sanitize_color_scheme
 /**
  * Enqueues front-end CSS for color scheme.
  *
- * @since Twenty Sixteen 1.0
+ * @since Business Portfolio 0.1
  *
  * @see wp_add_inline_style()
  */
@@ -381,7 +381,7 @@ add_action( 'wp_enqueue_scripts', 'businessportfolio_color_scheme_css' );
  *
  * Passes color scheme data as colorScheme global.
  *
- * @since Twenty Sixteen 1.0
+ * @since Business Portfolio 0.1
  */
 function businessportfolio_customize_control_js() {
 	wp_enqueue_script( 'color-scheme-control', get_template_directory_uri() . '/js/color-scheme-control.js', array( 'customize-controls', 'iris', 'underscore', 'wp-util' ), '20150926', true );
@@ -392,7 +392,7 @@ add_action( 'customize_controls_enqueue_scripts', 'businessportfolio_customize_c
 /**
  * Binds JS handlers to make the Customizer preview reload changes asynchronously.
  *
- * @since Twenty Sixteen 1.0
+ * @since Business Portfolio 0.1
  */
 function businessportfolio_customize_preview_js() {
 	wp_enqueue_script( 'businessportfolio-customize-preview', get_template_directory_uri() . '/js/customize-preview.js', array( 'customize-preview' ), '20150922', true );
@@ -402,7 +402,7 @@ add_action( 'customize_preview_init', 'businessportfolio_customize_preview_js' )
 /**
  * Returns CSS for the color schemes.
  *
- * @since Twenty Sixteen 1.0
+ * @since Business Portfolio 0.1
  *
  * @param array $colors Color scheme colors.
  * @return string Color scheme CSS.
@@ -718,7 +718,7 @@ CSS;
  * The template generates the css dynamically for instant display in the
  * Customizer preview.
  *
- * @since Twenty Sixteen 1.0
+ * @since Business Portfolio 0.1
  */
 function businessportfolio_color_scheme_css_template() {
 	$colors = array(
@@ -740,7 +740,7 @@ add_action( 'customize_controls_print_footer_scripts', 'businessportfolio_color_
 /**
  * Enqueues front-end CSS for the page background color.
  *
- * @since Twenty Sixteen 1.0
+ * @since Business Portfolio 0.1
  *
  * @see wp_add_inline_style()
  */
@@ -813,7 +813,7 @@ add_action( 'wp_enqueue_scripts', 'businessportfolio_page_background_color_css',
 /**
  * Enqueues front-end CSS for the link color.
  *
- * @since Twenty Sixteen 1.0
+ * @since Business Portfolio 0.1
  *
  * @see wp_add_inline_style()
  */
@@ -909,7 +909,7 @@ add_action( 'wp_enqueue_scripts', 'businessportfolio_link_color_css', 11 );
 /**
  * Enqueues front-end CSS for the main text color.
  *
- * @since Twenty Sixteen 1.0
+ * @since Business Portfolio 0.1
  *
  * @see wp_add_inline_style()
  */
@@ -1056,7 +1056,7 @@ add_action( 'wp_enqueue_scripts', 'businessportfolio_main_text_color_css', 11 );
 /**
  * Enqueues front-end CSS for the secondary text color.
  *
- * @since Twenty Sixteen 1.0
+ * @since Business Portfolio 0.1
  *
  * @see wp_add_inline_style()
  */
@@ -1127,18 +1127,9 @@ function businessportfolio_secondary_text_color_css() {
 }
 add_action( 'wp_enqueue_scripts', 'businessportfolio_secondary_text_color_css', 11 );
 
-
 if ( ! function_exists('homeslider_post_type') ) {
 
-
-
-
-
-
-
-
-
-// Register Custom Post Type
+// Register Slider CPT
 function homeslider_post_type() {
 
 	$labels = array(
@@ -1191,30 +1182,41 @@ function homeslider_post_type() {
 	register_post_type( 'homeslider', $args );
 
 }
+
 add_action( 'init', 'homeslider_post_type', 0 );
 
 }
-
 
 function businessportfolio_login_logo() { ?>
 		<?php if ( get_header_image() ) { ?>
 			<style type="text/css">
 					.login h1 a {
-							background-image: url(<?php echo header_image(); ?>);
-							padding-bottom: 30px;
-							width: 100%;
-							height: auto;
-							background-size: 100%;
+							background-image: url(<?php echo header_image(); ?>) !important;
+							padding-bottom: 30px !important;
+							width: 100% !important;
+							height: auto !important;
+							background-size: 100% !important;
 					}
 			</style>
 		<?php } ?>
 <?php }
 add_action( 'login_enqueue_scripts', 'businessportfolio_login_logo' );
 
-add_filter('show_admin_bar', '__return_false');
+function my_footer_shh() {
+    if ( ! current_user_can('manage_options') ) {
+        remove_filter( 'update_footer', 'core_update_footer' );
+				//add_filter('show_admin_bar', '__return_false');
+				add_filter('admin_footer_text', 'businessportfolio_remove_footer_admin');
+    }
+}
+add_action( 'admin_menu', 'my_footer_shh' );
 
-function businessportfolio_remove_wp_logo() {
+function  businessportfolio_remove_wp_logo() {
 	global $wp_admin_bar;
 	$wp_admin_bar->remove_menu('wp-logo');
 }
 add_action( 'wp_before_admin_bar_render', 'businessportfolio_remove_wp_logo' );
+
+function businessportfolio_remove_footer_admin () {
+	echo "Business Portfolio Theme";
+}
